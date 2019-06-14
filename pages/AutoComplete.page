@@ -1,0 +1,253 @@
+<apex:page showHeader="false" controller="AutoCompleteController" standardStylesheets="false" sidebar="false" applyHtmlTag="false"
+ applyBodyTag="false" docType="html-5.0">
+
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>SLDS ResponsiveDesign Visualforce Page in Salesforce Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Import the Design System style sheet -->
+		<apex:slds />
+	</head>
+
+	<body>
+
+		<apex:form >
+			<!-- REQUIRED SLDS WRAPPER -->
+			<div class="slds-scope">
+
+				<!-- PRIMARY CONTENT WRAPPER -->
+
+				<!-- RESPONSIVE GRID EXAMPLE -->
+				<div class="myapp">
+					<div class="slds-grid slds-wrap">
+						<div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-4">
+							<div style="height:15rem">
+								<div class="slds-form-element">
+									<label class="slds-form-element__label" for="combobox-id-1">Relate to</label>
+									<div class="slds-form-element__control">
+										<div class="slds-combobox_container">
+											<div id="autoCompleteRSGParentDiv" class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false"
+											 aria-haspopup="listbox" role="combobox">
+												<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+													<span id="autoCompleteRSGHeader-User-Icon-id" class="slds-icon_container slds-icon-standard-account slds-combobox__input-entity-icon slds-hidden"
+													 title="Account">
+														<svg class="slds-icon slds-icon_small" aria-hidden="true">
+															<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/standard-sprite/svg/symbols.svg#user')}"></use>
+														</svg>
+														<span class="slds-assistive-text">User</span>
+													</span>
+													<input type="text" class="slds-input slds-combobox__input" id="autoCompleteRSG-input-id" aria-autocomplete="list" aria-controls="listbox-id-1"
+													 autoComplete="off" role="textbox" placeholder="Search..." onfocus="showListRSG(this);" ondblclick="hideListRSG(this);"
+													 onkeyup="getUsersRSG(this);" />
+													 
+													<input type="hidden" id="autoCompleteRSG-Selectedinput-id" value="" />
+													<span id="autoCompleteRSGHeader-Search-Icon-id" class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+														<svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+															<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+														</svg>
+													</span>
+
+													<button id="autoCompleteRSGHeader-Close-Icon-id" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right slds-hidden"
+													 title="Remove selected option" onclick="clearSelectedInputRSG(this); return false;">
+														<svg class="slds-button__icon" aria-hidden="true">
+															<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+														</svg>
+														<span class="slds-assistive-text">Remove selected option</span>
+													</button>
+												</div>
+												<div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+													<ul class="slds-listbox slds-listbox_vertical" role="presentation">
+														<li role="presentation" class="slds-listbox__item" onclick="selectThisOptionRSG(this);">
+															<div id="option1" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+																<span class="slds-media__figure slds-listbox__option-icon">
+																	<span class="slds-icon_container slds-icon-standard-user">
+																		<svg class="slds-icon slds-icon_small" aria-hidden="true">
+																			<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/standard-sprite/svg/symbols.svg#user')}"></use>
+																		</svg>
+																	</span>
+																</span>
+																<span class="slds-media__body">
+																	<span class="slds-listbox__option-text slds-listbox__option-text_entity">-- None --</span>
+																	<span class="slds-listbox__option-meta slds-listbox__option-meta_entity"></span>
+																</span>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="slds-form-element">
+									<label class="slds-form-element__label" for="combobox-id-1">Relate to</label>
+									<div class="slds-form-element__control">
+										<div class="slds-combobox_container">
+											<div id="autoCompleteRSGParentDiv" class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false"
+											 aria-haspopup="listbox" role="combobox">
+												<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+													<span id="autoCompleteRSGHeader-User-Icon-id" class="slds-icon_container slds-icon-standard-account slds-combobox__input-entity-icon slds-hidden"
+													 title="Account">
+														<svg class="slds-icon slds-icon_small" aria-hidden="true">
+															<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/standard-sprite/svg/symbols.svg#user')}"></use>
+														</svg>
+														<span class="slds-assistive-text">User</span>
+													</span>
+													<input type="text" class="slds-input slds-combobox__input" id="autoCompleteRSG-input-id" aria-autocomplete="list" aria-controls="listbox-id-1"
+													 autoComplete="off" role="textbox" placeholder="Search..." onfocus="showListRSG(this);" ondblclick="hideListRSG(this);"
+													 onkeyup="getUsersRSG(this);" />
+													<!--<apex:inputHidden value="" id="autoCompleteRSG-Selectedinput-id" /> -->
+													<input type="hidden" id="autoCompleteRSG-Selectedinput-id" name="custId" value="" />
+													<span id="autoCompleteRSGHeader-Search-Icon-id" class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+														<svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+															<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+														</svg>
+													</span>
+
+													<button id="autoCompleteRSGHeader-Close-Icon-id" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right slds-hidden"
+													 title="Remove selected option" onclick="clearSelectedInputRSG(this); return false;">
+														<svg class="slds-button__icon" aria-hidden="true">
+															<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+														</svg>
+														<span class="slds-assistive-text">Remove selected option</span>
+													</button>
+												</div>
+												<div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+													<ul class="slds-listbox slds-listbox_vertical" role="presentation">
+														<li role="presentation" class="slds-listbox__item" onclick="selectThisOptionRSG(this);">
+															<div id="option1" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+																<span class="slds-media__figure slds-listbox__option-icon">
+																	<span class="slds-icon_container slds-icon-standard-user">
+																		<svg class="slds-icon slds-icon_small" aria-hidden="true">
+																			<use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/standard-sprite/svg/symbols.svg#user')}"></use>
+																		</svg>
+																	</span>
+																</span>
+																<span class="slds-media__body">
+																	<span class="slds-listbox__option-text slds-listbox__option-text_entity">-- None --</span>
+																	<span class="slds-listbox__option-meta slds-listbox__option-meta_entity"></span>
+																</span>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- / RESPONSIVE GRID EXAMPLE -->
+			</div>
+		</apex:form>
+	</body>
+
+	<script>
+		/*
+		 * Code for Autocomplete SLDS lookup starts
+		 * Author Rahul Gawale
+		 * */
+		function callApexRemoteAction(searchValue, input) {
+			Visualforce.remoting.Manager.invokeAction(
+				'{!$RemoteAction.AutoCompleteController.getUsers}',
+				searchValue,
+				function (result, event) {
+					if (event.status) {
+						var mainSection = input.parentNode.parentNode;
+						var itemList = mainSection.querySelector('.slds-listbox_vertical');
+						var item = mainSection.querySelector('.slds-listbox__item').cloneNode(true);
+
+						while (itemList.lastChild) {
+							itemList.removeChild(itemList.lastChild);
+						}
+
+						itemList.appendChild(item);
+
+						console.log('result => ', result + ' ', itemList.childNodes);
+						Array.prototype.forEach.call(result, function (row) {
+							console.log('user ', row);
+							var newItem = item.cloneNode(true);
+							var metaData = newItem.querySelector('.slds-listbox__option-meta_entity').innerHTML = row.Name;
+							var metaData = newItem.querySelector('.slds-listbox__option-text_entity').innerHTML = row.Username;
+							itemList.appendChild(newItem);
+						});
+						mainSection.classList.add("slds-is-open");
+					} else if (event.type === 'exception') {
+						console.log("error" + event.message + " @ " + event.where);
+					} else {
+						console.log("error" + event.message);
+					}
+				},
+				{ escape: true }
+			);
+		}
+
+		function getUsersRSG(input) {
+			var result = callApexRemoteAction(input.value, input);
+		}
+
+		function showListRSG(input) {
+			console.log('in showListRSG');
+			if (!input.getAttribute("readonly")) {
+				input.parentNode.parentNode.classList.add("slds-is-open");
+			}
+		}
+
+		function hideListRSG(input) {
+			if (!input.getAttribute("readonly")) {
+				input.parentNode.parentNode.classList.toggle("slds-is-open");
+			}
+		}
+
+		function selectThisOptionRSG(selectedItem) {
+			console.log('in selectThisOptionRSG');
+			var mainSection = selectedItem.parentNode.parentNode.parentNode;
+			console.log('element => ', mainSection);
+
+			var closeIcon = mainSection.querySelector('#autoCompleteRSGHeader-Close-Icon-id');
+			closeIcon.classList.remove('slds-hidden');
+			var searchIcon = mainSection.querySelector('#autoCompleteRSGHeader-Search-Icon-id');
+			searchIcon.classList.add('slds-hidden');
+
+			var inputElement = mainSection.querySelector('#autoCompleteRSG-input-id');
+			inputElement.readonly = true;
+			inputElement.setAttribute("readonly", true);
+
+			var selectedValue = selectedItem.querySelector('.slds-listbox__option-text_entity');
+			inputElement.value = selectedValue.innerHTML;
+
+			var inputHiddenElement = mainSection.querySelector('autoCompleteRSG-Selectedinput-id');
+			inputHiddenElement = selectedItem.querySelector('.slds-listbox__option-meta_entity').innerHTML;
+
+			mainSection.classList.remove('slds-is-open');
+		}
+
+		function clearSelectedInputRSG(closeIcon) {
+			console.log('in clearSelectedInputRSG');
+			var mainSection = closeIcon.parentNode.parentNode;
+			closeIcon.classList.add('slds-hidden');
+
+			var inputElement = mainSection.querySelector('#autoCompleteRSG-input-id');
+			inputElement.readonly = false;
+			inputElement.removeAttribute('readonly');
+			inputElement.value = "";
+
+			var searchIcon = mainSection.querySelector('#autoCompleteRSGHeader-Search-Icon-id');
+			searchIcon.classList.remove('slds-hidden');
+
+			var inputHiddenElement = mainSection.querySelector('autoCompleteRSG-Selectedinput-id');
+			inputHiddenElement = '';
+		}
+
+		/*
+		 * Code for Autocomplete SLDS lookup ends
+		 * */
+	</script>
+
+	</html>
+</apex:page>
